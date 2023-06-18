@@ -37,7 +37,7 @@ body {
     display: inline-block;
     position: relative;
     overflow: hidden; /*防止图片溢出*/
-    transition: all .7s;
+    transition: all .5s;
 }
 
 .img_title {
