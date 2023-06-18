@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huoji.bing.wallpaper.mapper.BingImagesCommentMapper">
+  <resultMap id="BaseResultMap" type="com.huoji.bing.wallpaper.entity.BingImagesComment">
+    <!--@mbg.generated-->
+    <!--@Table bing_images_comment-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="image_id" jdbcType="INTEGER" property="imageId" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="last_updated_time" jdbcType="TIMESTAMP" property="lastUpdatedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, image_id, ip, phone, `comment`, parent_id, creation_time, last_updated_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from bing_images_comment
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from bing_images_comment
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImagesComment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bing_images_comment (image_id, ip, phone, 
+      `comment`, parent_id, creation_time, 
+      last_updated_time)
+    values (#{imageId,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{comment,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, #{creationTime,jdbcType=TIMESTAMP}, 
+      #{lastUpdatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImagesComment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bing_images_comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imageId != null">
+        image_id,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="comment != null">
+        `comment`,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="creationTime != null">
+        creation_time,
+      </if>
+      <if test="lastUpdatedTime != null">
+        last_updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imageId != null">
+        #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedTime != null">
+        #{lastUpdatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huoji.bing.wallpaper.entity.BingImagesComment">
+    <!--@mbg.generated-->
+    update bing_images_comment
+    <set>
+      <if test="imageId != null">
+        image_id = #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        `comment` = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="creationTime != null">
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedTime != null">
+        last_updated_time = #{lastUpdatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huoji.bing.wallpaper.entity.BingImagesComment">
+    <!--@mbg.generated-->
+    update bing_images_comment
+    set image_id = #{imageId,jdbcType=INTEGER},
+      ip = #{ip,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      `comment` = #{comment,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      last_updated_time = #{lastUpdatedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

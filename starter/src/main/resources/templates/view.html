@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <link rel="shortcut icon" th:href="@{/images/bing.webp}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/swiper/swiper-bundle.css}">
+    <script th:src="@{/swiper/swiper-bundle.js}"></script>
+
+    <th:block th:include="include :: header('Bing Wallpaper')"/>
+    <style>
+        html, body {
+            padding: 0px;
+            margin: 0;
+            overflow: overlay;
+        }
+
+        * {
+            transition: all 0.7s;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<!-- 结构代码 -->
+<body class="layui-layout-body">
+
+<div class="screen-size">
+    <span id="screenWidth">1920</span> × <span id="screenHeight">1080</span>
+</div>
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- 如果需要分页器
+    <div class="swiper-pagination"></div>
+    -->
+    <!-- 如果需要导航按钮
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    -->
+    <!-- 如果需要滚动条
+    <div class="swiper-scrollbar"></div>
+     -->
+</div>
+
+<!-- 依赖 -->
+<th:block th:include="include :: footer"/>
+<script th:inline="javascript">
+    var mySwiper = new Swiper('.swiper', {
+        direction: 'vertical', // 垂直切换选项
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // 如果需要滚动条
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    })
+</script>
+</body>
+</html>

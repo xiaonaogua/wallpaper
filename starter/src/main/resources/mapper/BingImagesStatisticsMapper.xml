@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huoji.bing.wallpaper.mapper.BingImagesStatisticsMapper">
+  <resultMap id="BaseResultMap" type="com.huoji.bing.wallpaper.entity.BingImagesStatistics">
+    <!--@mbg.generated-->
+    <!--@Table bing_images_statistics-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="image_id" jdbcType="INTEGER" property="imageId" />
+    <result column="view_count" jdbcType="BIGINT" property="viewCount" />
+    <result column="download_count" jdbcType="BIGINT" property="downloadCount" />
+    <result column="comment_count" jdbcType="BIGINT" property="commentCount" />
+    <result column="collect_count" jdbcType="BIGINT" property="collectCount" />
+    <result column="like_count" jdbcType="BIGINT" property="likeCount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, image_id, view_count, download_count, comment_count, collect_count, like_count
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from bing_images_statistics
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByImageId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from bing_images_statistics
+    where image_id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from bing_images_statistics
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImagesStatistics" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bing_images_statistics (image_id, view_count, download_count, 
+      comment_count, collect_count, like_count
+      )
+    values (#{imageId,jdbcType=INTEGER}, #{viewCount,jdbcType=BIGINT}, #{downloadCount,jdbcType=BIGINT}, 
+      #{commentCount,jdbcType=BIGINT}, #{collectCount,jdbcType=BIGINT}, #{likeCount,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImagesStatistics" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bing_images_statistics
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imageId != null">
+        image_id,
+      </if>
+      <if test="viewCount != null">
+        view_count,
+      </if>
+      <if test="downloadCount != null">
+        download_count,
+      </if>
+      <if test="commentCount != null">
+        comment_count,
+      </if>
+      <if test="collectCount != null">
+        collect_count,
+      </if>
+      <if test="likeCount != null">
+        like_count,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imageId != null">
+        #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="viewCount != null">
+        #{viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="downloadCount != null">
+        #{downloadCount,jdbcType=BIGINT},
+      </if>
+      <if test="commentCount != null">
+        #{commentCount,jdbcType=BIGINT},
+      </if>
+      <if test="collectCount != null">
+        #{collectCount,jdbcType=BIGINT},
+      </if>
+      <if test="likeCount != null">
+        #{likeCount,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huoji.bing.wallpaper.entity.BingImagesStatistics">
+    <!--@mbg.generated-->
+    update bing_images_statistics
+    <set>
+      <if test="imageId != null">
+        image_id = #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="viewCount != null">
+        view_count = #{viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="downloadCount != null">
+        download_count = #{downloadCount,jdbcType=BIGINT},
+      </if>
+      <if test="commentCount != null">
+        comment_count = #{commentCount,jdbcType=BIGINT},
+      </if>
+      <if test="collectCount != null">
+        collect_count = #{collectCount,jdbcType=BIGINT},
+      </if>
+      <if test="likeCount != null">
+        like_count = #{likeCount,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huoji.bing.wallpaper.entity.BingImagesStatistics">
+    <!--@mbg.generated-->
+    update bing_images_statistics
+    set image_id = #{imageId,jdbcType=INTEGER},
+      view_count = #{viewCount,jdbcType=BIGINT},
+      download_count = #{downloadCount,jdbcType=BIGINT},
+      comment_count = #{commentCount,jdbcType=BIGINT},
+      collect_count = #{collectCount,jdbcType=BIGINT},
+      like_count = #{likeCount,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

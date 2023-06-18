@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huoji.bing.wallpaper.mapper.BingImagesLikeMapper">
+  <resultMap id="BaseResultMap" type="com.huoji.bing.wallpaper.entity.BingImagesLike">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="image_id" jdbcType="INTEGER" property="imageId" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="like_flag" jdbcType="CHAR" property="likeFlag" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="last_updated_time" jdbcType="TIMESTAMP" property="lastUpdatedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, image_id, ip, phone, like_flag, creation_time, last_updated_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bing_images_like
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from bing_images_like
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImagesLike" useGeneratedKeys="true">
+    insert into bing_images_like (image_id, ip, phone, 
+      like_flag, creation_time, last_updated_time
+      )
+    values (#{imageId,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{likeFlag,jdbcType=CHAR}, #{creationTime,jdbcType=TIMESTAMP}, #{lastUpdatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImagesLike" useGeneratedKeys="true">
+    insert into bing_images_like
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imageId != null">
+        image_id,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="likeFlag != null">
+        like_flag,
+      </if>
+      <if test="creationTime != null">
+        creation_time,
+      </if>
+      <if test="lastUpdatedTime != null">
+        last_updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imageId != null">
+        #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="likeFlag != null">
+        #{likeFlag,jdbcType=CHAR},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedTime != null">
+        #{lastUpdatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huoji.bing.wallpaper.entity.BingImagesLike">
+    update bing_images_like
+    <set>
+      <if test="imageId != null">
+        image_id = #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="likeFlag != null">
+        like_flag = #{likeFlag,jdbcType=CHAR},
+      </if>
+      <if test="creationTime != null">
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedTime != null">
+        last_updated_time = #{lastUpdatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huoji.bing.wallpaper.entity.BingImagesLike">
+    update bing_images_like
+    set image_id = #{imageId,jdbcType=INTEGER},
+      ip = #{ip,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      like_flag = #{likeFlag,jdbcType=CHAR},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      last_updated_time = #{lastUpdatedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from bing_images_like
+    where 1 = 1
+    <if test="imageId != null">
+      and image_id = #{imageId,jdbcType=INTEGER}
+    </if>
+    <if test="ip != null">
+      and ip = #{ip,jdbcType=VARCHAR}
+    </if>
+    <if test="phone != null">
+      and phone = #{phone,jdbcType=VARCHAR}
+    </if>
+  </select>
+</mapper>

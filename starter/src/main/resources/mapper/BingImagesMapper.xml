@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huoji.bing.wallpaper.mapper.BingImagesMapper">
+  <resultMap id="BaseResultMap" type="com.huoji.bing.wallpaper.entity.BingImages">
+    <!--@mbg.generated-->
+    <!--@Table bing_images-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="images_url" jdbcType="VARCHAR" property="imagesUrl" />
+    <result column="fullstartdate" jdbcType="VARCHAR" property="fullstartdate" />
+    <result column="startdate" jdbcType="VARCHAR" property="startdate" />
+    <result column="enddate" jdbcType="VARCHAR" property="enddate" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="urlbase" jdbcType="VARCHAR" property="urlbase" />
+    <result column="copyright" jdbcType="VARCHAR" property="copyright" />
+    <result column="copyrightlink" jdbcType="VARCHAR" property="copyrightlink" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="quiz" jdbcType="VARCHAR" property="quiz" />
+    <result column="wp" jdbcType="VARCHAR" property="wp" />
+    <result column="hsh" jdbcType="VARCHAR" property="hsh" />
+    <result column="drk" jdbcType="INTEGER" property="drk" />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="bot" jdbcType="INTEGER" property="bot" />
+    <result column="creation_by" jdbcType="VARCHAR" property="creationBy" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="last_updated_by" jdbcType="VARCHAR" property="lastUpdatedBy" />
+    <result column="last_updated_time" jdbcType="TIMESTAMP" property="lastUpdatedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, images_url, fullstartdate, startdate, enddate, url, urlbase, copyright, copyrightlink, 
+    title, quiz, wp, hsh, drk, `top`, bot, creation_by, creation_time, last_updated_by, 
+    last_updated_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from bing_images
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from bing_images
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImages" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bing_images (images_url, fullstartdate, startdate, 
+      enddate, url, urlbase, 
+      copyright, copyrightlink, title, 
+      quiz, wp, hsh, drk, 
+      `top`, bot, creation_by, 
+      creation_time, last_updated_by, last_updated_time
+      )
+    values (#{imagesUrl,jdbcType=VARCHAR}, #{fullstartdate,jdbcType=VARCHAR}, #{startdate,jdbcType=VARCHAR}, 
+      #{enddate,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{urlbase,jdbcType=VARCHAR}, 
+      #{copyright,jdbcType=VARCHAR}, #{copyrightlink,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{quiz,jdbcType=VARCHAR}, #{wp,jdbcType=VARCHAR}, #{hsh,jdbcType=VARCHAR}, #{drk,jdbcType=INTEGER}, 
+      #{top,jdbcType=INTEGER}, #{bot,jdbcType=INTEGER}, #{creationBy,jdbcType=VARCHAR}, 
+      #{creationTime,jdbcType=TIMESTAMP}, #{lastUpdatedBy,jdbcType=VARCHAR}, #{lastUpdatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huoji.bing.wallpaper.entity.BingImages" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bing_images
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imagesUrl != null">
+        images_url,
+      </if>
+      <if test="fullstartdate != null">
+        fullstartdate,
+      </if>
+      <if test="startdate != null">
+        startdate,
+      </if>
+      <if test="enddate != null">
+        enddate,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="urlbase != null">
+        urlbase,
+      </if>
+      <if test="copyright != null">
+        copyright,
+      </if>
+      <if test="copyrightlink != null">
+        copyrightlink,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="quiz != null">
+        quiz,
+      </if>
+      <if test="wp != null">
+        wp,
+      </if>
+      <if test="hsh != null">
+        hsh,
+      </if>
+      <if test="drk != null">
+        drk,
+      </if>
+      <if test="top != null">
+        `top`,
+      </if>
+      <if test="bot != null">
+        bot,
+      </if>
+      <if test="creationBy != null">
+        creation_by,
+      </if>
+      <if test="creationTime != null">
+        creation_time,
+      </if>
+      <if test="lastUpdatedBy != null">
+        last_updated_by,
+      </if>
+      <if test="lastUpdatedTime != null">
+        last_updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imagesUrl != null">
+        #{imagesUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="fullstartdate != null">
+        #{fullstartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="startdate != null">
+        #{startdate,jdbcType=VARCHAR},
+      </if>
+      <if test="enddate != null">
+        #{enddate,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="urlbase != null">
+        #{urlbase,jdbcType=VARCHAR},
+      </if>
+      <if test="copyright != null">
+        #{copyright,jdbcType=VARCHAR},
+      </if>
+      <if test="copyrightlink != null">
+        #{copyrightlink,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="quiz != null">
+        #{quiz,jdbcType=VARCHAR},
+      </if>
+      <if test="wp != null">
+        #{wp,jdbcType=VARCHAR},
+      </if>
+      <if test="hsh != null">
+        #{hsh,jdbcType=VARCHAR},
+      </if>
+      <if test="drk != null">
+        #{drk,jdbcType=INTEGER},
+      </if>
+      <if test="top != null">
+        #{top,jdbcType=INTEGER},
+      </if>
+      <if test="bot != null">
+        #{bot,jdbcType=INTEGER},
+      </if>
+      <if test="creationBy != null">
+        #{creationBy,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedBy != null">
+        #{lastUpdatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdatedTime != null">
+        #{lastUpdatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huoji.bing.wallpaper.entity.BingImages">
+    <!--@mbg.generated-->
+    update bing_images
+    <set>
+      <if test="imagesUrl != null">
+        images_url = #{imagesUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="fullstartdate != null">
+        fullstartdate = #{fullstartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="startdate != null">
+        startdate = #{startdate,jdbcType=VARCHAR},
+      </if>
+      <if test="enddate != null">
+        enddate = #{enddate,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="urlbase != null">
+        urlbase = #{urlbase,jdbcType=VARCHAR},
+      </if>
+      <if test="copyright != null">
+        copyright = #{copyright,jdbcType=VARCHAR},
+      </if>
+      <if test="copyrightlink != null">
+        copyrightlink = #{copyrightlink,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="quiz != null">
+        quiz = #{quiz,jdbcType=VARCHAR},
+      </if>
+      <if test="wp != null">
+        wp = #{wp,jdbcType=VARCHAR},
+      </if>
+      <if test="hsh != null">
+        hsh = #{hsh,jdbcType=VARCHAR},
+      </if>
+      <if test="drk != null">
+        drk = #{drk,jdbcType=INTEGER},
+      </if>
+      <if test="top != null">
+        `top` = #{top,jdbcType=INTEGER},
+      </if>
+      <if test="bot != null">
+        bot = #{bot,jdbcType=INTEGER},
+      </if>
+      <if test="creationBy != null">
+        creation_by = #{creationBy,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdatedBy != null">
+        last_updated_by = #{lastUpdatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdatedTime != null">
+        last_updated_time = #{lastUpdatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huoji.bing.wallpaper.entity.BingImages">
+    <!--@mbg.generated-->
+    update bing_images
+    set images_url = #{imagesUrl,jdbcType=VARCHAR},
+      fullstartdate = #{fullstartdate,jdbcType=VARCHAR},
+      startdate = #{startdate,jdbcType=VARCHAR},
+      enddate = #{enddate,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      urlbase = #{urlbase,jdbcType=VARCHAR},
+      copyright = #{copyright,jdbcType=VARCHAR},
+      copyrightlink = #{copyrightlink,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      quiz = #{quiz,jdbcType=VARCHAR},
+      wp = #{wp,jdbcType=VARCHAR},
+      hsh = #{hsh,jdbcType=VARCHAR},
+      drk = #{drk,jdbcType=INTEGER},
+      `top` = #{top,jdbcType=INTEGER},
+      bot = #{bot,jdbcType=INTEGER},
+      creation_by = #{creationBy,jdbcType=VARCHAR},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      last_updated_by = #{lastUpdatedBy,jdbcType=VARCHAR},
+      last_updated_time = #{lastUpdatedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from bing_images
+    where 1 = 1
+    <if test="imagesUrl != null">
+      and images_url = #{imagesUrl,jdbcType=VARCHAR}
+    </if>
+    <if test="fullstartdate != null">
+      and fullstartdate = #{fullstartdate,jdbcType=VARCHAR}
+    </if>
+    <if test="startdate != null">
+      and startdate = #{startdate,jdbcType=VARCHAR}
+    </if>
+    <if test="enddate != null">
+      and enddate = #{enddate,jdbcType=VARCHAR}
+    </if>
+    <if test="url != null">
+      and url = #{url,jdbcType=VARCHAR}
+    </if>
+    <if test="urlbase != null">
+      and urlbase = #{urlbase,jdbcType=VARCHAR}
+    </if>
+    <if test="copyright != null">
+      and copyright = #{copyright,jdbcType=VARCHAR}
+    </if>
+    <if test="copyrightlink != null">
+      and copyrightlink = #{copyrightlink,jdbcType=VARCHAR}
+    </if>
+    <if test="title != null">
+      and title = #{title,jdbcType=VARCHAR}
+    </if>
+    <if test="creationBy != null">
+      and creation_by = #{creationBy,jdbcType=VARCHAR}
+    </if>
+    <if test="creationTime != null">
+      and creation_time = #{creationTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="lastUpdatedBy != null">
+      and last_updated_by = #{lastUpdatedBy,jdbcType=VARCHAR}
+    </if>
+    <if test="lastUpdatedTime != null">
+      and last_updated_time = #{lastUpdatedTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="direction != null and direction != 'prev'">
+      and id &lt;= #{id, jdbcType=INTEGER}
+    </if>
+    <if test="direction != null and direction != 'next'">
+      and id &gt;= #{id, jdbcType=INTEGER}
+    </if>
+    order by id desc, startdate desc
+  </select>
+
+  <select id="selectTodayImage" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from bing_images
+    order by enddate desc
+    limit 1
+  </select>
+
+</mapper>

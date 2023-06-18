@@ -1,0 +1,45 @@
+html, body {
+    padding: 0px;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url("https://www.bing.com/th?id=OHR.TheChaps_ZH-CN5966508162_1920x1080.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background-attachment:fixed;
+}
+.content {
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    min-height: 72px;
+    z-index: 999;
+    top: 30%;
+    backdrop-filter:blur(16px) contrast(0.6);
+    -webkit-backdrop-filter: blur(2px) contrast(0.6);
+    height: auto;
+    overflow: auto;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    border-radius: 8px;
+}
+#todayWold {
+    font-size: 3vw;
+    color: #fff;
+    margin: 24px;
+    height: auto;
+}
+#todayWoldAuthor {
+    font-size: 3vw;
+    color: #fff;
+    margin: 24px;
+    height: auto;
+    text-align: right;
+}

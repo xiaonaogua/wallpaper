@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="x5-page-mode" content="app">
+    <link rel="shortcut icon" th:href="@{/images/bing.webp}" type="image/x-icon">
+    <th:block th:include="include :: header('Bing Wallpaper')"/>
+    <link rel="stylesheet" th:href="@{/css/main.css?v=1}">
+</head>
+    <!-- 结构代码 -->
+    <body class="layui-layout-body">
+        <div class="page-tabs">
+            <div class="page-tabs-box">
+                <div class="page-tabs-item" id="index_tab" s>首 页</div>
+                <div class="page-tabs-item" id="wallpaper_tab">壁 纸</div>
+                <div class="page-tabs-item" id="about_tab">关 于</div>
+                <div class="active_tabs_bar" style="width: 50px; transform: translateX(12px)"></div>
+            </div>
+        </div>
+        <iframe id="main-iframe" src="index"></iframe>
+
+        <th:block th:include="include :: footer"/>
+        <script th:src="@{/js/main.js?v=2}"></script>
+
+        <!-- <script th:src="@{/icon/iconfont.js}"></script>-->
+    </body>
+</html>

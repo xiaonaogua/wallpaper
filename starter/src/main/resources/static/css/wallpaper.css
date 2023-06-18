@@ -1,0 +1,272 @@
+html, body {
+    padding: 0px;
+    margin: 0;
+    overflow: overlay;
+}
+
+* {
+    /*transition: all 0.7s;*/
+}
+
+body {
+    text-align: center;
+}
+
+.bg {
+    padding: 12px;
+}
+
+.bg:before {
+    content: ' ';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    filter: blur(20px);
+}
+
+.img_div {
+    border: 1px #fff solid;
+    width: 144px;
+    height: 256px;
+    border-radius: 4px;
+    margin: 12px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /*防止图片溢出*/
+    transition: all .7s;
+}
+
+.img_title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0.1rem;
+    display: none;
+    color: #fff;
+    font-size: .8rem;
+    text-align: left;
+    padding: 6px;
+}
+
+.images {
+    background-repeat: round;
+    border-radius: 4px;
+    transition: all .7s;
+    cursor: pointer;
+}
+
+.images:before {
+    filter: blur(16px);
+}
+
+/*图片自动慢慢放大1.1倍*/
+.images:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1); /*Safari 和 Chrome*/
+    -moz-transform: scale(1.1); /*Firefox*/
+    -ms-transform: scale(1.1); /*IE9*/
+    -o-transform: scale(1.1); /*Opera*/
+    transition: transform 5s ease-out; /* 定义过渡动画效果 */
+}
+
+.loadMore {
+    background: #fff;
+    color: #999;
+    font-size: 12px;
+    padding: 6px 0;
+    width: 50%;
+    float: left;
+    text-align: center;
+    bottom: 0px;
+}
+
+.screen-size {
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    color: #fff;
+    font-size: 0.1rem;
+}
+
+::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 1px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.swiper {
+}
+
+.swiper-item-img {
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+}
+
+.swiper-item-img-span {
+    position: absolute;
+    color: #fff;
+    left: 0;
+    right: 0;
+    text-align: left;
+    padding: 0 12px;
+    /*opacity: 0.8;*/
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+}
+
+.copyright-name {
+    bottom: 28px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.copyright-author {
+    bottom: 6px;
+    font-size: 0.6rem;
+}
+
+.viewSwiper {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.view-swiper-item-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.view-swiper-item-img-div {
+    position: absolute;
+    color: #fff;
+    right: 0;
+    left: 0;
+    padding: 0 12px;
+    text-align: left;
+    bottom: 0;
+    cursor: pointer;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    /*opacity: 0.8;*/
+}
+
+.view-swiper-item-img-div:hover {
+    opacity: 1;
+}
+
+.view-swiper-item-img-div > div {
+    line-height: 24px;
+}
+
+.span-title {
+    font-size: 1.0rem;
+    font-weight: 600;
+}
+
+.viewImgBox {
+    height: 100%;
+}
+
+.view-swiper-item-left-div{
+    position: absolute;
+    width: 42px;
+    height: 40%;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    padding-right: 12px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+}
+.view-swiper-item-left-div > div{
+    height: 42px;
+    width: 42px;
+    margin-bottom: 18px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.view-swiper-item-left-div i{
+    font-size: 28px;
+    text-shadow: 5px 2px 3px #333;
+}
+
+.yidianzan{
+    color: #f23356
+}
+
+.close-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    padding: 4px;
+    margin: 12px;
+    z-index: 999999;
+    border-radius: 50px;
+    opacity: 1;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.close-view:hover {
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.close-view i {
+    font-size: 2.0rem;
+    text-shadow: 5px 2px 3px #333;
+}
+
+.toTop {
+    position: fixed;
+    right: 50px;
+    bottom: 60px;
+    max-height: 40px;
+    max-width: 40px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border: 2px solid#fff;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+    text-shadow: 0 5px 10px rgba(0,0,0,.3);
+    opacity: 0.5;
+    z-index: 999;
+}
+.toTop i {
+    font-size: 30px;
+    color: #fff;
+}
+.toTop:hover{
+    transition: all 0.3s;
+    opacity: 1;
+}
