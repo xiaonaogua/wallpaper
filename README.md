@@ -18,4 +18,4 @@
 
 ### 赞助：其实本环节大家可以跳过，无需赞助，小站对大家有帮助，那便是晴天。
 
-![微信截图_20230630234942](https://github.com/xiaonaogua/wallpaper/assets/130883817/45f980f4-9a87-47ac-ac24-2b01d4b67383)
+![微信截图_20230701000404](https://github.com/xiaonaogua/wallpaper/assets/130883817/72f31757-a13d-480d-99c8-9fe70ed3ea57)
